@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screen.ResultPaymentActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_above="@id/result_payment_back_to_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/result_payment_tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái: Thanh toán thành công"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_order_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Mã đơn hàng: DB2022"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Họ và tên: Dương Huân"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Địa chỉ: Phụng thượng"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="SĐT: 0866444202"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Email: dbhuan@gmail.com"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_total_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tổng tiền: 1.000.000VNĐ"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_total_discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Khuyến mại: 1.000.000VNĐ"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/result_payment_tv_total_price_discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tổng: 1.000.000VNĐ"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/result_payment_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:overScrollMode="never" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/result_payment_back_to_home"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quay về trang chủ" />
+
+</RelativeLayout>

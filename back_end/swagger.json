@@ -1,0 +1,161 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "API SHOPPING",
+        "version": "1.0"
+    },
+    "tags": [
+        {
+            "name": "Sản phẩm"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": [
+                    "Sản phẩm"
+                ],
+                "parameters": [
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Vị trí bắt đầu",
+                        "example": 1
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "số bản ghi sẽ lấy",
+                        "example": 10
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Thành công",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Sản phẩm"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateProductDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Thành công",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Product": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "sku": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    },
+                    "discount": {
+                        "type": "number"
+                    },
+                    "available": {
+                        "type": "boolean"
+                    },
+                    "stock": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "CreateProductDto": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    },
+                    "discount": {
+                        "type": "number"
+                    },
+                    "available": {
+                        "type": "boolean"
+                    },
+                    "stock": {
+                        "type": "number"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PagedResultProductDto": {
+                "type": "object",
+                "properties": {
+                    "totalRecord": {
+                        "type": "number"
+                    },
+                    "items": {
+                        "$ref": "#/components/schemas/Product"
+                    }
+                }
+            }
+        }
+    }
+}

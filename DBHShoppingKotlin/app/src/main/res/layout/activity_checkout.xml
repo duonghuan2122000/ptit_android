@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.CheckoutActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/checkout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/cart_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Tiến hành đặt hàng"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/checkout_title"
+        android:layout_above="@id/checkout_payment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Thông tin khách hàng"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_firstname"
+                android:hint="Tên"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_lastname"
+                android:hint="Họ và tên đệm"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_province"
+                android:hint="Tỉnh/Thành phố"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_district"
+                android:hint="Quận/Huyện"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_address"
+                android:hint="Địa chỉ"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_phone"
+                android:hint="Số điện thoại"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/checkout_ed_email"
+                android:hint="Email"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Thông tin đơn hàng"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:id="@+id/checkout_recycler_view"
+                tools:listitem="@layout/item_cart_product"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/checkout_payment"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/checkout_btn_payment"
+            android:text="Thanh toán"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
